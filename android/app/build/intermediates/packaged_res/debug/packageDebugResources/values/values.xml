@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="accent">#8affc1</color>
+    <color name="accent_dim">#5cc98a</color>
+    <color name="bg">#0e1116</color>
+    <color name="black_ink">#0a1a10</color>
+    <color name="border">#242c3a</color>
+    <color name="danger">#ff6b6b</color>
+    <color name="panel">#151a22</color>
+    <color name="panel_light">#1d2430</color>
+    <color name="text">#e6edf3</color>
+    <color name="text_dim">#8b96a7</color>
+    <string name="app_name">Micky</string>
+    <style name="Theme.Micky" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryVariant">@color/accent_dim</item>
+        <item name="colorOnPrimary">@color/black_ink</item>
+        <item name="colorSecondary">@color/accent_dim</item>
+        <item name="colorOnSecondary">@color/black_ink</item>
+        <item name="android:colorBackground">@color/bg</item>
+        <item name="colorSurface">@color/panel</item>
+        <item name="colorOnSurface">@color/text</item>
+        <item name="android:statusBarColor" ns1:targetApi="l">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

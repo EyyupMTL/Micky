@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:title="Ana Sayfa"
+        android:icon="@drawable/ic_mic"/>
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Ayarlar"
+        android:icon="@drawable/ic_settings"/>
+</menu>

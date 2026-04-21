@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-mergeDebugResources-38:\\layout\\fragment_settings.xml",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\fragment_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-mergeDebugResources-38:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "com.micky.phone.app-mergeDebugResources-38:/layout/fragment_home.xml",
+        "source": "com.micky.phone.app-main-41:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-mergeDebugResources-38:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\activity_main.xml"
+    }
+]
