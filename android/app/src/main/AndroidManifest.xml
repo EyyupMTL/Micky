@@ -7,9 +7,18 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Bluetooth (Android 12+) -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <!-- Legacy for Android 11 and below -->
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
 
     <uses-feature
         android:name="android.hardware.microphone"
@@ -53,6 +62,12 @@
             android:exported="false"
             android:foregroundServiceType="microphone" />
 
+        <service
+            android:name=".BluetoothMicService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="microphone|connectedDevice" />
+
         <activity
             android:name=".CaptureActivityPortrait"
             android:screenOrientation="portrait"
@@ -60,6 +75,13 @@
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:exported="false" />
+
+        <activity
+            android:name=".QrScanActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:theme="@style/Theme.Micky"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
     </application>
 
 </manifest>

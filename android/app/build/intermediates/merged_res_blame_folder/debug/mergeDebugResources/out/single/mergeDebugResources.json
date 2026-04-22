@@ -4,12 +4,8 @@
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\mipmap-hdpi\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_ic_settings.xml.flat",
-        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_settings.xml"
-    },
-    {
-        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\layout_fragment_bt.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\fragment_bt.xml"
     },
     {
         "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\layout_fragment_home.xml.flat",
@@ -24,6 +20,50 @@
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\banner_warn.xml"
     },
     {
+        "merged": "com.micky.phone.app-debug-39:/layout_activity_qr_scan.xml.flat",
+        "source": "com.micky.phone.app-main-41:/layout/activity_qr_scan.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\mipmap-hdpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\layout_fragment_settings.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\fragment_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\menu_bottom_nav.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\menu\\bottom_nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_dot_off.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\dot_off.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\layout_activity_qr_scan.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\activity_qr_scan.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_ic_qr.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_qr.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_launcher_background.xml"
+    },
+    {
         "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_ic_mic_off.xml.flat",
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_mic_off.xml"
     },
@@ -36,18 +76,6 @@
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_stop.xml"
     },
     {
-        "merged": "com.micky.phone.app-debug-39:/layout_fragment_home.xml.flat",
-        "source": "com.micky.phone.app-main-41:/layout/fragment_home.xml"
-    },
-    {
-        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\mipmap-hdpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\mipmap-hdpi\\ic_launcher.xml"
-    },
-    {
-        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\layout_fragment_settings.xml.flat",
-        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\fragment_settings.xml"
-    },
-    {
         "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_launcher_foreground.xml"
     },
@@ -56,31 +84,19 @@
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_mic.xml"
     },
     {
-        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
         "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_dot_on.xml.flat",
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\dot_on.xml"
     },
     {
-        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\menu_bottom_nav.xml.flat",
-        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\menu\\bottom_nav.xml"
-    },
-    {
-        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_dot_off.xml.flat",
-        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\dot_off.xml"
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_ic_bluetooth.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_bluetooth.xml"
     },
     {
         "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\drawable_ic_qr.xml.flat",
-        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\ic_qr.xml"
+        "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\layout_view_barcode_scanner.xml.flat",
+        "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\view_barcode_scanner.xml"
     }
 ]

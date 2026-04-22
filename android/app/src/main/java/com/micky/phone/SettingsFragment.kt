@@ -1,7 +1,7 @@
 package com.micky.phone
 
-import android.Manifest
-import android.content.pm.PackageManager
+import android.app.Activity
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
@@ -10,11 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import com.journeyapps.barcodescanner.ScanContract
-import com.journeyapps.barcodescanner.ScanOptions
 import com.micky.phone.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
@@ -22,16 +19,13 @@ class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
 
-    private val cameraPermLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission()
-    ) { granted ->
-        if (granted) launchScannerActual()
-        else snack("Kamera izni reddedildi")
-    }
-
-    private val qrLauncher = registerForActivityResult(ScanContract()) { result ->
-        val raw = result.contents ?: return@registerForActivityResult
-        applyUri(raw)
+    private val qrLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val raw = result.data?.getStringExtra(QrScanActivity.EXTRA_RESULT)
+            if (!raw.isNullOrBlank()) applyUri(raw)
+        }
     }
 
     override fun onCreateView(
@@ -66,23 +60,7 @@ class SettingsFragment : Fragment() {
     }
 
     private fun launchScanner() {
-        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
-            != PackageManager.PERMISSION_GRANTED) {
-            cameraPermLauncher.launch(Manifest.permission.CAMERA)
-        } else {
-            launchScannerActual()
-        }
-    }
-
-    private fun launchScannerActual() {
-        val options = ScanOptions()
-            .setDesiredBarcodeFormats(ScanOptions.QR_CODE)
-            .setPrompt("PC ekranındaki QR kodu tara")
-            .setBeepEnabled(false)
-            .setOrientationLocked(true)
-            .setBarcodeImageEnabled(false)
-            .setCaptureActivity(CaptureActivityPortrait::class.java)
-        qrLauncher.launch(options)
+        qrLauncher.launch(Intent(requireContext(), QrScanActivity::class.java))
     }
 
     private fun applyUri(raw: String) {

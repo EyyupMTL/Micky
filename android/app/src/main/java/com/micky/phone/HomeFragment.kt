@@ -58,6 +58,31 @@ class HomeFragment : Fragment() {
             if (State.connected.value == true) stopStream() else startStream()
         }
 
+        // Gain slider — local prefs + push to PC while user drags
+        val savedGain = Prefs.get(requireContext())
+            .getString(Prefs.KEY_GAIN, "1.0")?.toFloatOrNull() ?: 1.0f
+        binding.gainSlider.value = savedGain.coerceIn(0f, 3f)
+        binding.gainValue.text = String.format(java.util.Locale.US, "%.2f×", savedGain)
+        State.gain.value = savedGain
+        binding.gainSlider.addOnChangeListener { _, value, fromUser ->
+            binding.gainValue.text = String.format(java.util.Locale.US, "%.2f×", value)
+            if (fromUser) {
+                State.gain.value = value
+                Prefs.get(requireContext()).edit()
+                    .putString(Prefs.KEY_GAIN, value.toString())
+                    .apply()
+                val intent = Intent(requireContext(), MicStreamService::class.java).apply {
+                    action = MicStreamService.ACTION_GAIN
+                    putExtra(MicStreamService.EXTRA_GAIN, value)
+                }
+                requireContext().startService(intent)
+            }
+        }
+
+        // Initialise FX from prefs so it survives app restarts
+        val savedFx = Prefs.get(requireContext()).getString(Prefs.KEY_FX, "normal") ?: "normal"
+        if (State.fx.value != savedFx) State.fx.value = savedFx
+
         // Build FX chips dynamically so IDs stay stable to selection lookup by tag
         val currentFx = State.fx.value ?: "normal"
         Fx.presets.forEach { (id, label) ->
@@ -111,6 +136,14 @@ class HomeFragment : Fragment() {
                 val shouldCheck = c.tag == preset
                 if (c.isChecked != shouldCheck) c.isChecked = shouldCheck
             }
+        }
+        State.gain.observe(viewLifecycleOwner) { value ->
+            val v = value ?: 1.0f
+            // Avoid slider feedback loop: only update if meaningfully different
+            if (kotlin.math.abs(binding.gainSlider.value - v) > 0.01f) {
+                binding.gainSlider.value = v.coerceIn(0f, 3f)
+            }
+            binding.gainValue.text = String.format(java.util.Locale.US, "%.2f×", v)
         }
         State.mismatch.observe(viewLifecycleOwner) { serverMode ->
             if (serverMode == null) {
@@ -197,6 +230,7 @@ class HomeFragment : Fragment() {
 
     private fun selectFx(presetId: String) {
         State.fx.value = presetId
+        Prefs.get(requireContext()).edit().putString(Prefs.KEY_FX, presetId).apply()
         val intent = Intent(requireContext(), MicStreamService::class.java).apply {
             action = MicStreamService.ACTION_FX
             putExtra(MicStreamService.EXTRA_FX, presetId)

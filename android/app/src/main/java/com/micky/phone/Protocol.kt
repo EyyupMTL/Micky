@@ -13,6 +13,7 @@ object Frames {
     const val TYPE_MODE: Byte = 4
     const val TYPE_NOTE: Byte = 5
     const val TYPE_FX: Byte = 6
+    const val TYPE_GAIN: Byte = 7
 
     /** Write a frame: 1-byte type, 4-byte LE length, payload. */
     fun write(out: OutputStream, type: Byte, payload: ByteArray = ByteArray(0)) {

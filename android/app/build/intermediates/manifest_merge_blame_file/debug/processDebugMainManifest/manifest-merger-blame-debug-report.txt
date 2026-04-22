@@ -26,243 +26,295 @@
 16    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
 16-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:9:5-88
 16-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:9:22-85
-17    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-17-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:10:5-77
-17-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:10:22-74
-18    <uses-permission android:name="android.permission.CAMERA" />
-18-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:11:5-65
-18-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:11:22-62
-19    <uses-permission android:name="android.permission.WAKE_LOCK" />
-19-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:12:5-68
-19-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:12:22-65
-20
-21    <uses-feature
-21-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:14:5-16:35
-22        android:name="android.hardware.microphone"
-22-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:15:9-51
-23        android:required="true" />
-23-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:16:9-32
-24    <uses-feature
-24-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:17:5-19:36
-25        android:name="android.hardware.camera"
-25-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:18:9-47
-26        android:required="false" />
-26-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:19:9-33
-27
-28    <permission
-28-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
-29        android:name="com.micky.phone.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-29-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
-30        android:protectionLevel="signature" />
-30-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
-31
-32    <uses-permission android:name="com.micky.phone.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-32-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-32-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
-33
-34    <uses-feature
-34-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
-35        android:name="android.hardware.camera.front"
-35-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
-36        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
-36-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
-37    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
-38    <uses-feature
-38-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
-39        android:name="android.hardware.camera.autofocus"
-39-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
-40        android:required="false" />
-40-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
-41    <uses-feature
-41-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
-42        android:name="android.hardware.camera.flash"
-42-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
-43        android:required="false" />
-43-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
-44    <uses-feature
-44-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
-45        android:name="android.hardware.screen.landscape"
-45-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
-46        android:required="false" />
-46-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
-47    <uses-feature
-47-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
-48        android:name="android.hardware.wifi"
-48-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
-49        android:required="false" />
-49-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
-50
-51    <application
-51-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:21:5-63:19
-52        android:name="com.micky.phone.MickyApp"
-52-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:22:9-33
-53        android:allowBackup="false"
-53-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:23:9-36
-54        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-54-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
-55        android:dataExtractionRules="@xml/data_extraction_rules"
-55-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:24:9-65
-56        android:debuggable="true"
-57        android:extractNativeLibs="false"
-58        android:fullBackupContent="false"
-58-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:25:9-42
-59        android:icon="@mipmap/ic_launcher"
-59-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:26:9-43
-60        android:label="@string/app_name"
-60-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:27:9-41
-61        android:roundIcon="@mipmap/ic_launcher_round"
-61-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:28:9-54
-62        android:supportsRtl="true"
-62-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:29:9-35
-63        android:theme="@style/Theme.Micky"
-63-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:30:9-43
-64        android:usesCleartextTraffic="true" >
-64-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:31:9-44
-65        <activity
-65-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:33:9-48:20
-66            android:name="com.micky.phone.MainActivity"
-66-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:34:13-41
-67            android:configChanges="orientation|screenSize|keyboardHidden"
-67-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:37:13-74
-68            android:exported="true"
-68-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:35:13-36
-69            android:screenOrientation="portrait" >
-69-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:36:13-49
-70            <intent-filter>
-70-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:38:13-41:29
-71                <action android:name="android.intent.action.MAIN" />
-71-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:39:17-69
-71-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:39:25-66
-72
-73                <category android:name="android.intent.category.LAUNCHER" />
-73-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:40:17-77
-73-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:40:27-74
-74            </intent-filter>
-75            <intent-filter>
-75-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:42:13-47:29
-76                <action android:name="android.intent.action.VIEW" />
-76-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:43:17-69
-76-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:43:25-66
-77
-78                <category android:name="android.intent.category.DEFAULT" />
-78-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:44:17-76
-78-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:44:27-73
-79                <category android:name="android.intent.category.BROWSABLE" />
-79-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:45:17-78
-79-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:45:27-75
-80
-81                <data android:scheme="micky" />
-81-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:46:17-48
-81-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:46:23-45
-82            </intent-filter>
-83        </activity>
-84
-85        <service
-85-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:50:9-54:58
-86            android:name="com.micky.phone.MicStreamService"
-86-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:51:13-45
-87            android:enabled="true"
-87-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:52:13-35
-88            android:exported="false"
-88-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:53:13-37
-89            android:foregroundServiceType="microphone" />
-89-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:54:13-55
-90
-91        <activity
-91-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:56:9-62:40
-92            android:name="com.micky.phone.CaptureActivityPortrait"
-92-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:57:13-52
-93            android:exported="false"
-93-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:62:13-37
-94            android:screenOrientation="portrait"
-94-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:58:13-49
-95            android:stateNotNeeded="true"
-95-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:59:13-42
-96            android:theme="@style/zxing_CaptureTheme"
-96-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:60:13-54
-97            android:windowSoftInputMode="stateAlwaysHidden" />
-97-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:61:13-60
-98
-99        <provider
-99-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-100            android:name="androidx.startup.InitializationProvider"
-100-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-101            android:authorities="com.micky.phone.androidx-startup"
-101-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-102            android:exported="false" >
-102-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-103            <meta-data
-103-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-104                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-104-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-105                android:value="androidx.startup" />
-105-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-106            <meta-data
-106-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\3396e70cb89e17903288b724fe0e675b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:29:13-31:52
-107                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-107-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\3396e70cb89e17903288b724fe0e675b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:30:17-78
-108                android:value="androidx.startup" />
-108-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\3396e70cb89e17903288b724fe0e675b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:31:17-49
-109            <meta-data
-109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-110                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-111                android:value="androidx.startup" />
-111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-112        </provider>
-113
-114        <receiver
-114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-115            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-115-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-116            android:directBootAware="false"
-116-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-117            android:enabled="true"
-117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-118            android:exported="true"
-118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-119            android:permission="android.permission.DUMP" >
-119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-120            <intent-filter>
-120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-121                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-122            </intent-filter>
-123            <intent-filter>
-123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-124                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-125            </intent-filter>
-126            <intent-filter>
-126-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-127                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-128            </intent-filter>
-129            <intent-filter>
-129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-130                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-131            </intent-filter>
-132        </receiver>
-133
-134        <activity
-134-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
-135            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-135-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
-136            android:clearTaskOnLaunch="true"
-136-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
-137            android:screenOrientation="sensorLandscape"
-137-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
-138            android:stateNotNeeded="true"
-138-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
-139            android:theme="@style/zxing_CaptureTheme"
-139-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
-140            android:windowSoftInputMode="stateAlwaysHidden" />
-140-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
-141    </application>
-142
-143</manifest>
+17    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+17-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:10:5-94
+17-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:10:22-91
+18    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+18-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:11:5-77
+18-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:11:22-74
+19    <uses-permission android:name="android.permission.CAMERA" />
+19-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:12:5-65
+19-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:12:22-62
+20    <uses-permission android:name="android.permission.WAKE_LOCK" />
+20-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:13:5-68
+20-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:13:22-65
+21
+22    <!-- Bluetooth (Android 12+) -->
+23    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+23-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:16:5-76
+23-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:16:22-73
+24    <uses-permission
+24-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:17:5-120
+25        android:name="android.permission.BLUETOOTH_SCAN"
+25-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:17:22-70
+26        android:usesPermissionFlags="neverForLocation" />
+26-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:17:71-117
+27    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+27-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:18:5-78
+27-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:18:22-75
+28    <!-- Legacy for Android 11 and below -->
+29    <uses-permission
+29-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:20:5-95
+30        android:name="android.permission.BLUETOOTH"
+30-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:20:22-65
+31        android:maxSdkVersion="30" />
+31-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:20:66-92
+32    <uses-permission
+32-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:21:5-101
+33        android:name="android.permission.BLUETOOTH_ADMIN"
+33-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:21:22-71
+34        android:maxSdkVersion="30" />
+34-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:21:72-98
+35
+36    <uses-feature
+36-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:23:5-25:35
+37        android:name="android.hardware.microphone"
+37-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:24:9-51
+38        android:required="true" />
+38-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:25:9-32
+39    <uses-feature
+39-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:26:5-28:36
+40        android:name="android.hardware.camera"
+40-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:27:9-47
+41        android:required="false" />
+41-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:28:9-33
+42
+43    <permission
+43-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+44        android:name="com.micky.phone.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+44-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+45        android:protectionLevel="signature" />
+45-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+46
+47    <uses-permission android:name="com.micky.phone.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+47-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+47-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+48
+49    <uses-feature
+49-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
+50        android:name="android.hardware.camera.front"
+50-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
+51        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+51-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
+52    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+53    <uses-feature
+53-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
+54        android:name="android.hardware.camera.autofocus"
+54-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
+55        android:required="false" />
+55-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
+56    <uses-feature
+56-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
+57        android:name="android.hardware.camera.flash"
+57-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
+58        android:required="false" />
+58-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+59    <uses-feature
+59-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
+60        android:name="android.hardware.screen.landscape"
+60-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+61        android:required="false" />
+61-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+62    <uses-feature
+62-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
+63        android:name="android.hardware.wifi"
+63-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+64        android:required="false" />
+64-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
+65
+66    <application
+66-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:30:5-85:19
+67        android:name="com.micky.phone.MickyApp"
+67-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:31:9-33
+68        android:allowBackup="false"
+68-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:32:9-36
+69        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+69-->[androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+70        android:dataExtractionRules="@xml/data_extraction_rules"
+70-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:33:9-65
+71        android:debuggable="true"
+72        android:extractNativeLibs="false"
+73        android:fullBackupContent="false"
+73-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:34:9-42
+74        android:icon="@mipmap/ic_launcher"
+74-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:35:9-43
+75        android:label="@string/app_name"
+75-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:36:9-41
+76        android:roundIcon="@mipmap/ic_launcher_round"
+76-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:37:9-54
+77        android:supportsRtl="true"
+77-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:38:9-35
+78        android:theme="@style/Theme.Micky"
+78-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:39:9-43
+79        android:usesCleartextTraffic="true" >
+79-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:40:9-44
+80        <activity
+80-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:42:9-57:20
+81            android:name="com.micky.phone.MainActivity"
+81-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:43:13-41
+82            android:configChanges="orientation|screenSize|keyboardHidden"
+82-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:46:13-74
+83            android:exported="true"
+83-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:44:13-36
+84            android:screenOrientation="portrait" >
+84-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:45:13-49
+85            <intent-filter>
+85-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:47:13-50:29
+86                <action android:name="android.intent.action.MAIN" />
+86-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:48:17-69
+86-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:48:25-66
+87
+88                <category android:name="android.intent.category.LAUNCHER" />
+88-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:49:17-77
+88-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:49:27-74
+89            </intent-filter>
+90            <intent-filter>
+90-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:51:13-56:29
+91                <action android:name="android.intent.action.VIEW" />
+91-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:52:17-69
+91-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:52:25-66
+92
+93                <category android:name="android.intent.category.DEFAULT" />
+93-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:53:17-76
+93-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:53:27-73
+94                <category android:name="android.intent.category.BROWSABLE" />
+94-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:54:17-78
+94-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:54:27-75
+95
+96                <data android:scheme="micky" />
+96-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:55:17-48
+96-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:55:23-45
+97            </intent-filter>
+98        </activity>
+99
+100        <service
+100-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:59:9-63:58
+101            android:name="com.micky.phone.MicStreamService"
+101-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:60:13-45
+102            android:enabled="true"
+102-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:61:13-35
+103            android:exported="false"
+103-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:62:13-37
+104            android:foregroundServiceType="microphone" />
+104-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:63:13-55
+105        <service
+105-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:65:9-69:74
+106            android:name="com.micky.phone.BluetoothMicService"
+106-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:66:13-48
+107            android:enabled="true"
+107-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:67:13-35
+108            android:exported="false"
+108-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:68:13-37
+109            android:foregroundServiceType="microphone|connectedDevice" />
+109-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:69:13-71
+110
+111        <activity
+111-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:71:9-77:40
+112            android:name="com.micky.phone.CaptureActivityPortrait"
+112-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:72:13-52
+113            android:exported="false"
+113-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:77:13-37
+114            android:screenOrientation="portrait"
+114-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:73:13-49
+115            android:stateNotNeeded="true"
+115-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:74:13-42
+116            android:theme="@style/zxing_CaptureTheme"
+116-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:75:13-54
+117            android:windowSoftInputMode="stateAlwaysHidden" />
+117-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:76:13-60
+118        <activity
+118-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:79:9-84:77
+119            android:name="com.micky.phone.QrScanActivity"
+119-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:80:13-43
+120            android:configChanges="orientation|screenSize|keyboardHidden"
+120-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:84:13-74
+121            android:exported="false"
+121-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:82:13-37
+122            android:screenOrientation="portrait"
+122-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:81:13-49
+123            android:theme="@style/Theme.Micky" />
+123-->C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:83:13-47
+124
+125        <provider
+125-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+126            android:name="androidx.startup.InitializationProvider"
+126-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+127            android:authorities="com.micky.phone.androidx-startup"
+127-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+128            android:exported="false" >
+128-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+129            <meta-data
+129-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+130                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+130-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+131                android:value="androidx.startup" />
+131-->[androidx.emoji2:emoji2:1.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\ebbed53b87cc78b1ed922faae1d02bbf\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+132            <meta-data
+132-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\3396e70cb89e17903288b724fe0e675b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:29:13-31:52
+133                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+133-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\3396e70cb89e17903288b724fe0e675b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:30:17-78
+134                android:value="androidx.startup" />
+134-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\3396e70cb89e17903288b724fe0e675b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:31:17-49
+135            <meta-data
+135-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+136                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+136-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+137                android:value="androidx.startup" />
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+138        </provider>
+139
+140        <receiver
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+141            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+142            android:directBootAware="false"
+142-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+143            android:enabled="true"
+143-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+144            android:exported="true"
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+145            android:permission="android.permission.DUMP" >
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+146            <intent-filter>
+146-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+147                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+148            </intent-filter>
+149            <intent-filter>
+149-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+150                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+151            </intent-filter>
+152            <intent-filter>
+152-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+153                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+154            </intent-filter>
+155            <intent-filter>
+155-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+156                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\7d1cbe8a464bfeee5b0fb9294a30d1ac\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+157            </intent-filter>
+158        </receiver>
+159
+160        <activity
+160-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
+161            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+161-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
+162            android:clearTaskOnLaunch="true"
+162-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+163            android:screenOrientation="sensorLandscape"
+163-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
+164            android:stateNotNeeded="true"
+164-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+165            android:theme="@style/zxing_CaptureTheme"
+165-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+166            android:windowSoftInputMode="stateAlwaysHidden" />
+166-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+167    </application>
+168
+169</manifest>

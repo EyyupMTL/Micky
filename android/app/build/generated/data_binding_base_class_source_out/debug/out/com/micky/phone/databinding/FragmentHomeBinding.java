@@ -13,6 +13,7 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.slider.Slider;
 import com.micky.phone.MicOrbView;
 import com.micky.phone.R;
 import com.micky.phone.VuView;
@@ -46,6 +47,12 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ChipGroup fxChips;
 
   @NonNull
+  public final Slider gainSlider;
+
+  @NonNull
+  public final TextView gainValue;
+
+  @NonNull
   public final MicOrbView micOrb;
 
   @NonNull
@@ -68,9 +75,10 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull TextView bigStatusText,
       @NonNull Chip chipBt, @NonNull Chip chipDirect, @NonNull Chip chipUsb, @NonNull Chip chipWifi,
-      @NonNull MaterialButton connectBtn, @NonNull ChipGroup fxChips, @NonNull MicOrbView micOrb,
-      @NonNull TextView mismatchBanner, @NonNull ChipGroup modeChips, @NonNull TextView orbHint,
-      @NonNull TextView statusText, @NonNull TextView targetText, @NonNull VuView vu) {
+      @NonNull MaterialButton connectBtn, @NonNull ChipGroup fxChips, @NonNull Slider gainSlider,
+      @NonNull TextView gainValue, @NonNull MicOrbView micOrb, @NonNull TextView mismatchBanner,
+      @NonNull ChipGroup modeChips, @NonNull TextView orbHint, @NonNull TextView statusText,
+      @NonNull TextView targetText, @NonNull VuView vu) {
     this.rootView = rootView;
     this.bigStatusText = bigStatusText;
     this.chipBt = chipBt;
@@ -79,6 +87,8 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.chipWifi = chipWifi;
     this.connectBtn = connectBtn;
     this.fxChips = fxChips;
+    this.gainSlider = gainSlider;
+    this.gainValue = gainValue;
     this.micOrb = micOrb;
     this.mismatchBanner = mismatchBanner;
     this.modeChips = modeChips;
@@ -157,6 +167,18 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.gainSlider;
+      Slider gainSlider = ViewBindings.findChildViewById(rootView, id);
+      if (gainSlider == null) {
+        break missingId;
+      }
+
+      id = R.id.gainValue;
+      TextView gainValue = ViewBindings.findChildViewById(rootView, id);
+      if (gainValue == null) {
+        break missingId;
+      }
+
       id = R.id.micOrb;
       MicOrbView micOrb = ViewBindings.findChildViewById(rootView, id);
       if (micOrb == null) {
@@ -200,8 +222,8 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       return new FragmentHomeBinding((ScrollView) rootView, bigStatusText, chipBt, chipDirect,
-          chipUsb, chipWifi, connectBtn, fxChips, micOrb, mismatchBanner, modeChips, orbHint,
-          statusText, targetText, vu);
+          chipUsb, chipWifi, connectBtn, fxChips, gainSlider, gainValue, micOrb, mismatchBanner,
+          modeChips, orbHint, statusText, targetText, vu);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

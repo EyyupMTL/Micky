@@ -5,6 +5,10 @@
         android:title="Ana Sayfa"
         android:icon="@drawable/ic_mic"/>
     <item
+        android:id="@+id/nav_bluetooth"
+        android:title="Telefon→Telefon"
+        android:icon="@drawable/ic_bluetooth"/>
+    <item
         android:id="@+id/nav_settings"
         android:title="Ayarlar"
         android:icon="@drawable/ic_settings"/>

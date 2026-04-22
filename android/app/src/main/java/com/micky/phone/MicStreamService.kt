@@ -62,6 +62,12 @@ class MicStreamService : Service() {
                 sendFxAsync(preset)
                 return START_STICKY
             }
+            ACTION_GAIN -> {
+                val g = intent?.getFloatExtra(EXTRA_GAIN, 1.0f) ?: 1.0f
+                State.gain.postValue(g)
+                sendGainAsync(g)
+                return START_STICKY
+            }
             ACTION_START -> {
                 if (running) return START_STICKY
                 val host = intent?.getStringExtra(EXTRA_HOST) ?: return START_NOT_STICKY
@@ -118,17 +124,27 @@ class MicStreamService : Service() {
             val bufSize = maxOf(minBuf, 4096) * 2
             var record: AudioRecord? = null
             try {
-                record = AudioRecord(
-                    MediaRecorder.AudioSource.VOICE_COMMUNICATION,
-                    sampleRate,
-                    AudioFormat.CHANNEL_IN_MONO,
-                    AudioFormat.ENCODING_PCM_16BIT,
-                    bufSize
+                // Prefer UNPROCESSED (API 24+) — raw mic, no AGC/NS/AEC so the
+                // volume doesn't "pump down" when you talk loudly for a while.
+                // Fall back to CAMCORDER (top/rear mic, light processing), then
+                // MIC (default).
+                record = openRecord(
+                    MediaRecorder.AudioSource.UNPROCESSED, sampleRate, bufSize
+                ) ?: openRecord(
+                    MediaRecorder.AudioSource.CAMCORDER, sampleRate, bufSize
+                ) ?: openRecord(
+                    MediaRecorder.AudioSource.MIC, sampleRate, bufSize
                 )
-                if (record.state != AudioRecord.STATE_INITIALIZED) {
+                if (record == null || record.state != AudioRecord.STATE_INITIALIZED) {
                     State.status.postValue("Mikrofon başlatılamadı")
                     return@thread
                 }
+                // Pin to the top built-in mic capsule when the device has more
+                // than one.
+                preferTopMic(record)
+                // Explicitly disable processing effects the platform may still
+                // attach by default.
+                disableHardwareFx(record.audioSessionId)
 
                 val s = Socket()
                 s.connect(InetSocketAddress(host, port), 5000)
@@ -197,6 +213,14 @@ class MicStreamService : Service() {
                                 Frames.TYPE_FX -> {
                                     val preset = String(payload, Charsets.UTF_8)
                                     if (preset.isNotEmpty()) State.fx.postValue(preset)
+                                }
+                                Frames.TYPE_GAIN -> {
+                                    if (payload.size >= 4) {
+                                        val g = java.nio.ByteBuffer.wrap(payload, 0, 4)
+                                            .order(java.nio.ByteOrder.LITTLE_ENDIAN)
+                                            .float
+                                        State.gain.postValue(g.coerceIn(0f, 3f))
+                                    }
                                 }
                                 else -> { /* ignore */ }
                             }
@@ -267,6 +291,60 @@ class MicStreamService : Service() {
         streamThread?.interrupt()
     }
 
+    @SuppressLint("MissingPermission")
+    private fun openRecord(source: Int, sampleRate: Int, bufSize: Int): AudioRecord? {
+        return try {
+            val r = AudioRecord(
+                source,
+                sampleRate,
+                AudioFormat.CHANNEL_IN_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                bufSize,
+            )
+            if (r.state == AudioRecord.STATE_INITIALIZED) r
+            else { try { r.release() } catch (_: Exception) {}; null }
+        } catch (_: Throwable) { null }
+    }
+
+    /** Turn off platform-attached audio effects that cause "volume pumping". */
+    private fun disableHardwareFx(sessionId: Int) {
+        try {
+            val c = android.media.audiofx.AutomaticGainControl.create(sessionId)
+            c?.enabled = false
+        } catch (_: Throwable) {}
+        try {
+            val n = android.media.audiofx.NoiseSuppressor.create(sessionId)
+            n?.enabled = false
+        } catch (_: Throwable) {}
+        try {
+            val a = android.media.audiofx.AcousticEchoCanceler.create(sessionId)
+            a?.enabled = false
+        } catch (_: Throwable) {}
+    }
+
+    /**
+     * Best-effort: pin the [AudioRecord] to a non-default built-in mic so we
+     * favour the top/rear capsule over the close-mouth bottom one.
+     */
+    @SuppressLint("MissingPermission")
+    private fun preferTopMic(record: AudioRecord) {
+        try {
+            val am = getSystemService(AUDIO_SERVICE) as android.media.AudioManager
+            val inputs = am.getDevices(android.media.AudioManager.GET_DEVICES_INPUTS)
+            val builtIn = inputs.filter {
+                it.type == android.media.AudioDeviceInfo.TYPE_BUILTIN_MIC
+            }
+            if (builtIn.size <= 1) return
+            // Heuristic: the *second* built-in mic is usually the top/rear one.
+            // On API 28+ we could introspect MicrophoneInfo but vendors are
+            // inconsistent, so empirically "not the first" works well.
+            val candidate = builtIn.drop(1).firstOrNull() ?: return
+            record.preferredDevice = candidate
+        } catch (_: Throwable) {
+            /* ignore — stay on default */
+        }
+    }
+
     /** Fire-and-forget control write off the main thread so mute never ANRs the UI. */
     private fun sendMuteAsync(m: Boolean) {
         val o = out ?: return
@@ -282,6 +360,17 @@ class MicStreamService : Service() {
         thread(isDaemon = true, name = "micky-ctl") {
             try {
                 Frames.write(o, Frames.TYPE_FX, preset.toByteArray(Charsets.UTF_8))
+            } catch (_: Exception) { /* socket closed */ }
+        }
+    }
+
+    private fun sendGainAsync(gain: Float) {
+        val o = out ?: return
+        thread(isDaemon = true, name = "micky-ctl") {
+            try {
+                val bb = java.nio.ByteBuffer.allocate(4).order(java.nio.ByteOrder.LITTLE_ENDIAN)
+                bb.putFloat(gain.coerceIn(0f, 3f))
+                Frames.write(o, Frames.TYPE_GAIN, bb.array())
             } catch (_: Exception) { /* socket closed */ }
         }
     }
@@ -320,11 +409,13 @@ class MicStreamService : Service() {
         const val ACTION_STOP = "com.micky.phone.STOP"
         const val ACTION_MUTE = "com.micky.phone.MUTE"
         const val ACTION_FX = "com.micky.phone.FX"
+        const val ACTION_GAIN = "com.micky.phone.GAIN"
         const val EXTRA_HOST = "host"
         const val EXTRA_PORT = "port"
         const val EXTRA_MUTED = "muted"
         const val EXTRA_MODE = "mode"
         const val EXTRA_FX = "fx"
+        const val EXTRA_GAIN = "gain"
         const val NOTIF_ID = 101
         const val TEN_MIN = 10L * 60 * 1000
     }

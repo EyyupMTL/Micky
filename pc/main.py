@@ -16,6 +16,7 @@ import customtkinter as ctk
 import sounddevice as sd
 from PIL import Image
 
+import config
 from network_utils import get_local_ips, make_qr
 from server import AudioServer, StreamInfo
 from transports import (
@@ -169,11 +170,14 @@ class App(ctk.CTk):
         self._server: Optional[AudioServer] = None
         self._running = False
         self._last_level = 0.0
-        self._mode: str = MODE_WIFI
+        self._cfg = config.load()
+        self._mode: str = self._cfg.get("mode", MODE_WIFI)
         self._usb_tunnel_open = False
         self._mismatch_mode: Optional[str] = None
+        self._save_scheduled = False
 
         self._build_ui()
+        self._apply_config_to_ui()
         self._refresh_ips()
         self.after(30, self._drain_events)
         self.after(40, self._tick_level)
@@ -242,6 +246,7 @@ class App(ctk.CTk):
         )
         self.port_entry.insert(0, "8125")
         self.port_entry.grid(row=0, column=1, sticky="w", padx=(10, 0))
+        self.port_entry.bind("<KeyRelease>", lambda _e: self._persist())
 
         self.start_btn = ctk.CTkButton(
             row1,
@@ -269,6 +274,7 @@ class App(ctk.CTk):
         self.device_combo = ctk.CTkOptionMenu(
             row2,
             values=labels or ["—"],
+            command=lambda _v: self._persist(),
             fg_color=PANEL_LIGHT,
             button_color=PANEL_LIGHT,
             button_hover_color=BORDER,
@@ -814,6 +820,7 @@ class App(ctk.CTk):
             self._server.server_mode = self._mode
             self._server.send_mode()
         self._update_mode_ui()
+        self._persist()
 
     def _update_mode_ui(self) -> None:
         ip = self._effective_ip()
@@ -827,10 +834,19 @@ class App(ctk.CTk):
             self.usb_btn.grid()
             if not usb_available():
                 self.usb_btn.configure(text="adb yok — Platform Tools gerekli", state="disabled")
-            elif self._usb_tunnel_open:
-                self.usb_btn.configure(text="USB tünelini kapat", state="normal")
             else:
-                self.usb_btn.configure(text="USB tünelini aç", state="normal")
+                # Auto-open the tunnel as soon as the user picks USB mode.
+                if not self._usb_tunnel_open:
+                    try:
+                        msg = open_usb_tunnel(port)
+                        self._usb_tunnel_open = True
+                        self._push_status(msg)
+                    except RuntimeError as e:
+                        self._push_status(str(e))
+                self.usb_btn.configure(
+                    text="USB tünelini kapat" if self._usb_tunnel_open else "USB tünelini yeniden dene",
+                    state="normal",
+                )
         else:
             self.usb_btn.grid_remove()
             if self._usb_tunnel_open:
@@ -887,7 +903,8 @@ class App(ctk.CTk):
     def _on_gain(self, v: float) -> None:
         self.gain_value.configure(text=f"{float(v):.2f}×")
         if self._server is not None:
-            self._server.gain = float(v)
+            self._server.send_gain(float(v))
+        self._persist()
 
     def _on_gate(self, v: float) -> None:
         v = float(v)
@@ -895,22 +912,26 @@ class App(ctk.CTk):
         self.gate_value.configure(text=label)
         if self._server is not None:
             self._server.noise_gate_db = v
+        self._persist()
 
     def _on_mute(self) -> None:
         m = bool(self.mute_var.get())
         if self._server is not None:
             self._server.send_mute(m)
+        self._persist()
 
     def _on_monitor(self) -> None:
         enabled = bool(self.monitor_var.get())
         if self._server is not None:
             info = self._server._info
             self._server.set_monitor_enabled(enabled, info)
+        self._persist()
 
     def _on_ns(self) -> None:
         enabled = bool(self.ns_var.get())
         if self._server is not None:
             self._server.voice_gate.enabled = enabled
+        self._persist()
 
     def _on_fx(self, label: str) -> None:
         preset_id = "normal"
@@ -920,6 +941,7 @@ class App(ctk.CTk):
                 break
         if self._server is not None:
             self._server.send_fx(preset_id)
+        self._persist()
 
     def _toggle_server(self) -> None:
         if not self._running:
@@ -936,6 +958,7 @@ class App(ctk.CTk):
                 on_remote_mute=self._push_remote_mute,
                 on_mode_mismatch=self._push_mode_mismatch,
                 on_remote_fx=self._push_remote_fx,
+                on_remote_gain=self._push_remote_gain,
             )
             self._server.gain = float(self.gain_slider.get())
             self._server.noise_gate_db = float(self.gate_slider.get())
@@ -998,6 +1021,9 @@ class App(ctk.CTk):
     def _push_remote_fx(self, preset: str) -> None:
         self._event_q.put(("remote_fx", preset))
 
+    def _push_remote_gain(self, gain: float) -> None:
+        self._event_q.put(("remote_gain", gain))
+
     def _drain_events(self) -> None:
         try:
             while True:
@@ -1023,6 +1049,10 @@ class App(ctk.CTk):
                         if pid == payload:
                             self.fx_combo.set(lbl)
                             break
+                elif kind == "remote_gain":
+                    # Reflect the phone's gain on PC without echoing back
+                    self.gain_slider.set(float(payload))
+                    self.gain_value.configure(text=f"{float(payload):.2f}×")
         except queue.Empty:
             pass
         self.after(30, self._drain_events)
@@ -1048,7 +1078,72 @@ class App(ctk.CTk):
         self._last_level *= 0.88
         self.after(40, self._tick_level)
 
+    def _apply_config_to_ui(self) -> None:
+        """Push loaded config values into widgets."""
+        cfg = self._cfg
+        self.port_entry.delete(0, "end")
+        self.port_entry.insert(0, str(cfg.get("port", 8125)))
+        # Mode
+        for mid, lbl in MODES:
+            if mid == cfg.get("mode", MODE_WIFI):
+                self.mode_combo.set(lbl)
+                self._mode = mid
+                break
+        # Output device — match by label (falls back to first if not found)
+        saved_label = cfg.get("output_device_label")
+        if saved_label:
+            labels = [lbl for _, lbl in self._devices]
+            if saved_label in labels:
+                self.device_combo.set(saved_label)
+        # Switches + sliders
+        self.monitor_var.set(bool(cfg.get("monitor", False)))
+        self.ns_var.set(bool(cfg.get("voice_gate", False)))
+        self.mute_var.set(bool(cfg.get("mute", False)))
+        self.gain_slider.set(float(cfg.get("gain", 1.0)))
+        self._on_gain(self.gain_slider.get())
+        self.gate_slider.set(float(cfg.get("noise_gate_db", -60.0)))
+        self._on_gate(self.gate_slider.get())
+        # Fx preset
+        fx_id = cfg.get("fx", "normal")
+        for pid, lbl in FX_PRESETS:
+            if pid == fx_id:
+                self.fx_combo.set(lbl)
+                break
+        self._update_mode_ui()
+
+    def _collect_config(self) -> dict:
+        return {
+            "port": int(self.port_entry.get() or 8125) if self.port_entry.get().isdigit() else 8125,
+            "mode": self._mode,
+            "output_device_label": self.device_combo.get(),
+            "monitor": bool(self.monitor_var.get()),
+            "voice_gate": bool(self.ns_var.get()),
+            "gain": float(self.gain_slider.get()),
+            "noise_gate_db": float(self.gate_slider.get()),
+            "fx": next((pid for pid, lbl in FX_PRESETS if lbl == self.fx_combo.get()), "normal"),
+            "mute": bool(self.mute_var.get()),
+        }
+
+    def _persist(self) -> None:
+        """Debounced save — coalesces rapid slider changes into one write."""
+        if self._save_scheduled:
+            return
+        self._save_scheduled = True
+
+        def flush():
+            self._save_scheduled = False
+            try:
+                config.save(self._collect_config())
+            except Exception:
+                pass
+
+        self.after(400, flush)
+
     def _on_close(self) -> None:
+        try:
+            config.save(self._collect_config())
+        except Exception:
+            pass
         if self._server is not None:
             self._server.stop()
         if self._usb_tunnel_open:

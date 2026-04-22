@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefon → Telefon"
+            android:textColor="@color/text"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Bluetooth üzerinden bir telefonu diğerinin mikrofonu yap"
+            android:textColor="@color/text_dim"
+            android:textSize="13sp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/panel"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ROL"
+                    android:textColor="@color/accent_dim"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.12"/>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/roleChips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipServer"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mikrofon Ver"
+                        android:checked="true"
+                        android:textColor="@color/text"
+                        app:chipBackgroundColor="@color/panel_light"
+                        app:checkedIconTint="@color/accent"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipClient"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mikrofon Al"
+                        android:textColor="@color/text"
+                        app:chipBackgroundColor="@color/panel_light"
+                        app:checkedIconTint="@color/accent"/>
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/roleHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/text_dim"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/devicesCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            app:cardBackgroundColor="@color/panel"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EŞLEŞMİŞ CİHAZLAR"
+                    android:textColor="@color/accent_dim"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.12"/>
+
+                <LinearLayout
+                    android:id="@+id/deviceList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/refreshBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Eşleşmiş cihazları yenile"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text"
+                    app:strokeColor="@color/border"
+                    style="@style/Widget.Material3.Button.OutlinedButton"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            app:cardBackgroundColor="@color/panel"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DURUM"
+                    android:textColor="@color/accent_dim"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.12"/>
+                <TextView
+                    android:id="@+id/btStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Hazır"
+                    android:textColor="@color/text"
+                    android:textSize="16sp"/>
+                <com.micky.phone.VuView
+                    android:id="@+id/btVu"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/actionBtn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="14dp"
+            android:text="Mikrofonu paylaşmaya başla"
+            android:textColor="@color/black_ink"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_mic"
+            app:iconTint="@color/black_ink"
+            app:backgroundTint="@color/accent"
+            app:cornerRadius="14dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp"/>
+    </LinearLayout>
+</ScrollView>

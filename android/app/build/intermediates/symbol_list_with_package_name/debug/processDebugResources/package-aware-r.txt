@@ -3033,6 +3033,7 @@ drawable design_snackbar_background
 drawable dot_off
 drawable dot_on
 drawable ic_arrow_back_black_24
+drawable ic_bluetooth
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -3181,6 +3182,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id actionBtn
 id actionDown
 id actionDownUp
 id actionUp
@@ -3220,6 +3222,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id barcodeView
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3233,9 +3236,12 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btStatus
+id btVu
 id buttonPanel
 id cache_measures
 id callMeasure
+id cancelBtn
 id cancel_button
 id carryVelocity
 id center
@@ -3249,7 +3255,9 @@ id chains
 id checkbox
 id checked
 id chipBt
+id chipClient
 id chipDirect
+id chipServer
 id chipUsb
 id chipWifi
 id chronometer
@@ -3289,6 +3297,8 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id deviceList
+id devicesCard
 id dialog_button
 id dimensions
 id direct
@@ -3341,6 +3351,8 @@ id fragment_container_view_tag
 id frost
 id fullscreen_header
 id fxChips
+id gainSlider
+id gainValue
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3447,6 +3459,7 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id navHost
+id nav_bluetooth
 id nav_home
 id nav_settings
 id navigation_bar_item_active_indicator_view
@@ -3506,15 +3519,19 @@ id postLayout
 id pressed
 id progress_circular
 id progress_horizontal
+id promptText
 id radio
 id ratio
 id rectangles
+id refreshBtn
 id report_drawn
 id reverseSawtooth
 id right
 id rightToLeft
 id right_icon
 id right_side
+id roleChips
+id roleHint
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -3782,6 +3799,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_qr_scan
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3798,6 +3816,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_bt
 layout fragment_home
 layout fragment_settings
 layout ime_base_split_test_activity
@@ -3863,6 +3882,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout view_barcode_scanner
 layout zxing_barcode_scanner
 layout zxing_capture
 menu bottom_nav

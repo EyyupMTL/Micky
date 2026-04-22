@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setOnItemSelectedListener { item ->
             val frag: Fragment = when (item.itemId) {
                 R.id.nav_home -> HomeFragment()
+                R.id.nav_bluetooth -> BluetoothFragment()
                 R.id.nav_settings -> SettingsFragment()
                 else -> return@setOnItemSelectedListener false
             }

@@ -497,6 +497,7 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\\Lib\\concurrent\\futures\\thread.py',
    'PYMODULE'),
+  ('config', 'C:\\Users\\eyypm\\Desktop\\Micky\\pc\\config.py', 'PYMODULE'),
   ('contextlib',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\\Lib\\contextlib.py',

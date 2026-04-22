@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:2:1-65:12
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:2:1-87:12
+INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:2:1-87:12
+INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:2:1-87:12
+INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:2:1-87:12
 MERGED from [androidx.databinding:viewbinding:8.6.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\1e61e8c976364738ea4472ae7e9b193e\transformed\viewbinding-8.6.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\5f9502db3b49ae44a103820fd47849bf\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\d007dd12f3d331d83883cbd4a2bf14f3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -87,37 +87,67 @@ uses-permission#android.permission.FOREGROUND_SERVICE_MICROPHONE
 ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:9:5-88
 	android:name
 		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:9:22-85
+uses-permission#android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:10:5-94
+	android:name
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:10:22-91
 uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:10:5-77
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:11:5-77
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:10:22-74
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:11:22-74
 uses-permission#android.permission.CAMERA
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:11:5-65
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:12:5-65
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:11:22-62
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:12:22-62
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:12:5-68
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:13:5-68
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:12:22-65
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:13:22-65
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:16:5-76
+	android:name
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:16:22-73
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:17:5-120
+	android:usesPermissionFlags
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:17:71-117
+	android:name
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:17:22-70
+uses-permission#android.permission.BLUETOOTH_ADVERTISE
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:18:5-78
+	android:name
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:18:22-75
+uses-permission#android.permission.BLUETOOTH
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:20:5-95
+	android:maxSdkVersion
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:20:66-92
+	android:name
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:20:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:21:5-101
+	android:maxSdkVersion
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:21:72-98
+	android:name
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:21:22-71
 uses-feature#android.hardware.microphone
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:14:5-16:35
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:23:5-25:35
 	android:required
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:16:9-32
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:25:9-32
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:15:9-51
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:24:9-51
 uses-feature#android.hardware.camera
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:17:5-19:36
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:26:5-28:36
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
 MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\f7246849914300701a62925f16c4baff\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
 	android:required
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:19:9-33
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:28:9-33
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:18:9-47
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:27:9-47
 application
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:21:5-63:19
-INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:21:5-63:19
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:30:5-85:19
+INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:30:5-85:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\5f9502db3b49ae44a103820fd47849bf\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\5f9502db3b49ae44a103820fd47849bf\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\d007dd12f3d331d83883cbd4a2bf14f3\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -141,87 +171,109 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\eyypm\.gradl
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\eyypm\.gradle\caches\8.10.2\transforms\9ffe34d62735cbe11b9eac1d74b90d47\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:29:9-35
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:38:9-35
 	android:label
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:27:9-41
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:36:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:25:9-42
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:34:9-42
 	android:roundIcon
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:28:9-54
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:37:9-54
 	android:icon
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:26:9-43
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:35:9-43
 	android:allowBackup
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:23:9-36
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:32:9-36
 	android:theme
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:30:9-43
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:39:9-43
 	android:dataExtractionRules
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:24:9-65
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:33:9-65
 	android:usesCleartextTraffic
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:31:9-44
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:40:9-44
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:22:9-33
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:31:9-33
 activity#com.micky.phone.MainActivity
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:33:9-48:20
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:42:9-57:20
 	android:screenOrientation
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:36:13-49
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:45:13-49
 	android:exported
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:35:13-36
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:44:13-36
 	android:configChanges
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:37:13-74
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:46:13-74
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:34:13-41
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:43:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:38:13-41:29
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:47:13-50:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:39:17-69
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:48:17-69
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:39:25-66
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:40:17-77
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:40:27-74
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:49:27-74
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:micky
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:42:13-47:29
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:51:13-56:29
 action#android.intent.action.VIEW
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:43:17-69
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:52:17-69
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:43:25-66
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:52:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:44:17-76
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:53:17-76
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:44:27-73
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:53:27-73
 category#android.intent.category.BROWSABLE
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:45:17-78
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:54:17-78
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:45:27-75
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:54:27-75
 data
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:46:17-48
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:55:17-48
 	android:scheme
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:46:23-45
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:55:23-45
 service#com.micky.phone.MicStreamService
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:50:9-54:58
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:59:9-63:58
 	android:enabled
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:52:13-35
-	android:exported
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:53:13-37
-	android:foregroundServiceType
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:54:13-55
-	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:51:13-45
-activity#com.micky.phone.CaptureActivityPortrait
-ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:56:9-62:40
-	android:screenOrientation
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:58:13-49
-	android:stateNotNeeded
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:59:13-42
-	android:windowSoftInputMode
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:61:13-60
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:61:13-35
 	android:exported
 		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:62:13-37
-	android:theme
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:60:13-54
+	android:foregroundServiceType
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:63:13-55
 	android:name
-		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:57:13-52
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:60:13-45
+service#com.micky.phone.BluetoothMicService
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:65:9-69:74
+	android:enabled
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:67:13-35
+	android:exported
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:68:13-37
+	android:foregroundServiceType
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:69:13-71
+	android:name
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:66:13-48
+activity#com.micky.phone.CaptureActivityPortrait
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:71:9-77:40
+	android:screenOrientation
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:73:13-49
+	android:stateNotNeeded
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:74:13-42
+	android:windowSoftInputMode
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:76:13-60
+	android:exported
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:77:13-37
+	android:theme
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:75:13-54
+	android:name
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:72:13-52
+activity#com.micky.phone.QrScanActivity
+ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:79:9-84:77
+	android:screenOrientation
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:81:13-49
+	android:exported
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:82:13-37
+	android:configChanges
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:84:13-74
+	android:theme
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:83:13-47
+	android:name
+		ADDED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml:80:13-43
 uses-sdk
 INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\eyypm\Desktop\Micky\android\app\src\main\AndroidManifest.xml

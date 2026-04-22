@@ -11,4 +11,5 @@ object State {
     val serverMode = MutableLiveData<String?>(null)
     val mismatch = MutableLiveData<String?>(null)
     val fx = MutableLiveData("normal")
+    val gain = MutableLiveData(1.0f)
 }
