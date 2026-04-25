@@ -37,6 +37,7 @@ class MicStreamService : Service() {
     private var wakeLock: PowerManager.WakeLock? = null
 
     private lateinit var localMode: String
+    private var micChoice: String = Prefs.MIC_AUTO
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -73,6 +74,7 @@ class MicStreamService : Service() {
                 val host = intent?.getStringExtra(EXTRA_HOST) ?: return START_NOT_STICKY
                 val port = intent.getIntExtra(EXTRA_PORT, 8125)
                 localMode = intent.getStringExtra(EXTRA_MODE) ?: MODE_WIFI
+                micChoice = intent.getStringExtra(EXTRA_MIC) ?: Prefs.MIC_AUTO
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
                     != PackageManager.PERMISSION_GRANTED
                 ) {
@@ -124,26 +126,20 @@ class MicStreamService : Service() {
             val bufSize = maxOf(minBuf, 4096) * 2
             var record: AudioRecord? = null
             try {
-                // Prefer UNPROCESSED (API 24+) — raw mic, no AGC/NS/AEC so the
-                // volume doesn't "pump down" when you talk loudly for a while.
-                // Fall back to CAMCORDER (top/rear mic, light processing), then
-                // MIC (default).
-                record = openRecord(
-                    MediaRecorder.AudioSource.UNPROCESSED, sampleRate, bufSize
-                ) ?: openRecord(
-                    MediaRecorder.AudioSource.CAMCORDER, sampleRate, bufSize
-                ) ?: openRecord(
-                    MediaRecorder.AudioSource.MIC, sampleRate, bufSize
-                )
+                // Source priority for routing to the TOP/BACK mic:
+                //   CAMCORDER  — OEM-routed to the video-record capsule (top/back)
+                //   UNPROCESSED— raw, usually the bottom close-talk capsule
+                //   MIC        — system default, usually bottom
+                record = openRecord(MediaRecorder.AudioSource.CAMCORDER, sampleRate, bufSize)
+                    ?: openRecord(MediaRecorder.AudioSource.UNPROCESSED, sampleRate, bufSize)
+                    ?: openRecord(MediaRecorder.AudioSource.MIC, sampleRate, bufSize)
                 if (record == null || record.state != AudioRecord.STATE_INITIALIZED) {
                     State.status.postValue("Mikrofon başlatılamadı")
                     return@thread
                 }
-                // Pin to the top built-in mic capsule when the device has more
-                // than one.
-                preferTopMic(record)
-                // Explicitly disable processing effects the platform may still
-                // attach by default.
+                // Pin to the chosen physical mic (top/bottom/default/auto).
+                applyMicChoice(record, micChoice)
+                // Disable AGC/NS/AEC the platform may still attach.
                 disableHardwareFx(record.audioSessionId)
 
                 val s = Socket()
@@ -323,23 +319,61 @@ class MicStreamService : Service() {
     }
 
     /**
-     * Best-effort: pin the [AudioRecord] to a non-default built-in mic so we
-     * favour the top/rear capsule over the close-mouth bottom one.
+     * Pin [record] to the user-chosen physical mic.
+     *  - "default": don't touch — let the system pick.
+     *  - "top"    : highest Y coordinate (back/top capsule, Android convention).
+     *  - "bottom" : lowest  Y coordinate (front/talk capsule).
+     *  - "auto"   : same as "top" (the back-mic is what users actually want).
      */
     @SuppressLint("MissingPermission")
-    private fun preferTopMic(record: AudioRecord) {
+    private fun applyMicChoice(record: AudioRecord, choice: String) {
+        if (choice == Prefs.MIC_DEFAULT) {
+            State.status.postValue("Mikrofon: sistem varsayılanı")
+            return
+        }
         try {
             val am = getSystemService(AUDIO_SERVICE) as android.media.AudioManager
             val inputs = am.getDevices(android.media.AudioManager.GET_DEVICES_INPUTS)
             val builtIn = inputs.filter {
                 it.type == android.media.AudioDeviceInfo.TYPE_BUILTIN_MIC
             }
-            if (builtIn.size <= 1) return
-            // Heuristic: the *second* built-in mic is usually the top/rear one.
-            // On API 28+ we could introspect MicrophoneInfo but vendors are
-            // inconsistent, so empirically "not the first" works well.
-            val candidate = builtIn.drop(1).firstOrNull() ?: return
-            record.preferredDevice = candidate
+            if (builtIn.isEmpty()) return
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                val mics = try { am.microphones } catch (_: Throwable) { emptyList() }
+                val positioned = mics
+                    .filter { it.type == android.media.AudioDeviceInfo.TYPE_BUILTIN_MIC }
+                    .filter {
+                        val p = it.position
+                        p != null && p.y != android.media.MicrophoneInfo.POSITION_UNKNOWN.y
+                    }
+                val pick = when (choice) {
+                    Prefs.MIC_BOTTOM -> positioned.minByOrNull { it.position.y }
+                    else -> positioned.maxByOrNull { it.position.y } // top / auto
+                }
+                if (pick != null) {
+                    val match = builtIn.firstOrNull { it.address == pick.address }
+                        ?: builtIn.firstOrNull { it.id == pick.id }
+                    if (match != null) {
+                        record.preferredDevice = match
+                        val label = if (choice == Prefs.MIC_BOTTOM) "alt" else "üst"
+                        val desc = pick.description ?: "y=${"%.2f".format(pick.position.y)}"
+                        State.status.postValue("Mikrofon: $label ($desc)")
+                        return
+                    }
+                }
+            }
+
+            // Pre-API-28 fallback: best effort by index (assume index 1 = top)
+            if (builtIn.size > 1) {
+                val mic = if (choice == Prefs.MIC_BOTTOM) builtIn.first()
+                          else builtIn.drop(1).first()
+                record.preferredDevice = mic
+                State.status.postValue(
+                    if (choice == Prefs.MIC_BOTTOM) "Mikrofon: alt (varsayılan)"
+                    else "Mikrofon: üst (ikinci yerleşik)"
+                )
+            }
         } catch (_: Throwable) {
             /* ignore — stay on default */
         }
@@ -416,6 +450,7 @@ class MicStreamService : Service() {
         const val EXTRA_MODE = "mode"
         const val EXTRA_FX = "fx"
         const val EXTRA_GAIN = "gain"
+        const val EXTRA_MIC = "mic"
         const val NOTIF_ID = 101
         const val TEN_MIN = 10L * 60 * 1000
     }

@@ -213,11 +213,13 @@ class HomeFragment : Fragment() {
             requestPerms.launch(arrayOf(Manifest.permission.RECORD_AUDIO))
             return
         }
+        val mic = prefs.getString(Prefs.KEY_MIC, Prefs.MIC_AUTO) ?: Prefs.MIC_AUTO
         val intent = Intent(requireContext(), MicStreamService::class.java).apply {
             action = MicStreamService.ACTION_START
             putExtra(MicStreamService.EXTRA_HOST, host)
             putExtra(MicStreamService.EXTRA_PORT, port)
             putExtra(MicStreamService.EXTRA_MODE, mode)
+            putExtra(MicStreamService.EXTRA_MIC, mic)
         }
         ContextCompat.startForegroundService(requireContext(), intent)
     }

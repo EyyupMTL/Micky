@@ -50,6 +50,13 @@ class BluetoothFragment : Fragment() {
         }
         b.refreshBtn.setOnClickListener { refreshPairedDevices() }
         b.actionBtn.setOnClickListener { onActionClicked() }
+        b.openBtSettingsBtn.setOnClickListener {
+            try {
+                startActivity(Intent(android.provider.Settings.ACTION_BLUETOOTH_SETTINGS))
+            } catch (_: Exception) {
+                snack("Bluetooth ayarları açılamadı")
+            }
+        }
 
         BtState.status.observe(viewLifecycleOwner) { b.btStatus.text = it ?: "" }
         BtState.connected.observe(viewLifecycleOwner) { connected ->
@@ -69,13 +76,18 @@ class BluetoothFragment : Fragment() {
     private fun applyRoleToUi(r: String) {
         if (r == BluetoothMicService.ROLE_CLIENT) {
             b.devicesCard.visibility = View.VISIBLE
-            b.roleHint.text = "Bu telefon karşı telefondan gelen sesi HOPARLÖRDEN çalar. " +
-                    "Video çekerken bu telefonun mikrofonu hoparlörü kaydeder → karşı telefon dış mikrofon gibi olur."
+            b.roleHint.text =
+                "1) Önce iki telefonu Bluetooth ayarlarından eşleştir.\n" +
+                "2) Karşı telefondaki Micky'de 'Mikrofon Ver' başlat.\n" +
+                "3) Aşağıda eşleşmiş cihazlardan onu seç → 'Bağlan'.\n" +
+                "Bu telefon sesi HOPARLÖRDEN çalar; video çekerken kendi mikrofonu hoparlörü kaydeder."
             refreshPairedDevices()
         } else {
             b.devicesCard.visibility = View.GONE
-            b.roleHint.text = "Bu telefonun mikrofonu Bluetooth üzerinden diğer telefona gönderilecek. " +
-                    "Önce iki telefonu Android Ayarlar > Bluetooth'tan eşleştir."
+            b.roleHint.text =
+                "1) Önce iki telefonu Bluetooth ayarlarından eşleştir.\n" +
+                "2) 'Mikrofonu paylaşmaya başla' → bu telefon dinlemeye geçer.\n" +
+                "3) Karşı telefonda 'Mikrofon Al' → bu cihaza bağlansın."
         }
     }
 
@@ -142,6 +154,14 @@ class BluetoothFragment : Fragment() {
             }
             ContextCompat.startForegroundService(requireContext(), i)
         } else {
+            // Optionally make the device discoverable so the other phone can
+            // pair with it if it isn't already.
+            try {
+                val discover = Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE).apply {
+                    putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 120)
+                }
+                startActivity(discover)
+            } catch (_: Exception) { /* not critical */ }
             val i = Intent(requireContext(), BluetoothMicService::class.java)
                 .setAction(BluetoothMicService.ACTION_START_SERVER)
             ContextCompat.startForegroundService(requireContext(), i)

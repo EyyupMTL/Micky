@@ -10,6 +10,12 @@ object Prefs {
     const val KEY_MODE = "mode"
     const val KEY_FX = "fx"
     const val KEY_GAIN = "gain"
+    const val KEY_MIC = "mic"
+
+    const val MIC_AUTO = "auto"
+    const val MIC_TOP = "top"
+    const val MIC_BOTTOM = "bottom"
+    const val MIC_DEFAULT = "default"
 
     fun get(context: Context): SharedPreferences =
         context.applicationContext.getSharedPreferences(FILE, Context.MODE_PRIVATE)

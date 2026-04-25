@@ -112,7 +112,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SES"
+                    android:text="MİKROFON"
                     android:textColor="@color/accent_dim"
                     android:textSize="11sp"
                     android:textStyle="bold"
@@ -121,10 +121,72 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Örnekleme 48 kHz · 16-bit · Mono\nİşlem VOICE_COMMUNICATION (eko bastırma + AGC)"
+                    android:layout_marginTop="6dp"
+                    android:text="Hangi mikrofonu kullansın?"
                     android:textColor="@color/text_dim"
                     android:textSize="12sp"/>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/micChips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMicAuto"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Otomatik"
+                        android:checked="true"
+                        android:textColor="@color/text"
+                        app:chipBackgroundColor="@color/panel_light"
+                        app:checkedIconTint="@color/accent"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMicTop"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Üst (arka)"
+                        android:textColor="@color/text"
+                        app:chipBackgroundColor="@color/panel_light"
+                        app:checkedIconTint="@color/accent"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMicBottom"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alt (ön)"
+                        android:textColor="@color/text"
+                        app:chipBackgroundColor="@color/panel_light"
+                        app:checkedIconTint="@color/accent"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMicDefault"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sistem"
+                        android:textColor="@color/text"
+                        app:chipBackgroundColor="@color/panel_light"
+                        app:checkedIconTint="@color/accent"/>
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/micHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/text_dim"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="48 kHz · 16-bit · Mono · AGC/NS/AEC kapalı"
+                    android:textColor="@color/text_dim"
+                    android:textSize="11sp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

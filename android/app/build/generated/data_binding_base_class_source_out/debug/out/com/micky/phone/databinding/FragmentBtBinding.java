@@ -47,6 +47,9 @@ public final class FragmentBtBinding implements ViewBinding {
   public final CardView devicesCard;
 
   @NonNull
+  public final MaterialButton openBtSettingsBtn;
+
+  @NonNull
   public final MaterialButton refreshBtn;
 
   @NonNull
@@ -58,8 +61,8 @@ public final class FragmentBtBinding implements ViewBinding {
   private FragmentBtBinding(@NonNull ScrollView rootView, @NonNull MaterialButton actionBtn,
       @NonNull TextView btStatus, @NonNull VuView btVu, @NonNull Chip chipClient,
       @NonNull Chip chipServer, @NonNull LinearLayout deviceList, @NonNull CardView devicesCard,
-      @NonNull MaterialButton refreshBtn, @NonNull ChipGroup roleChips,
-      @NonNull TextView roleHint) {
+      @NonNull MaterialButton openBtSettingsBtn, @NonNull MaterialButton refreshBtn,
+      @NonNull ChipGroup roleChips, @NonNull TextView roleHint) {
     this.rootView = rootView;
     this.actionBtn = actionBtn;
     this.btStatus = btStatus;
@@ -68,6 +71,7 @@ public final class FragmentBtBinding implements ViewBinding {
     this.chipServer = chipServer;
     this.deviceList = deviceList;
     this.devicesCard = devicesCard;
+    this.openBtSettingsBtn = openBtSettingsBtn;
     this.refreshBtn = refreshBtn;
     this.roleChips = roleChips;
     this.roleHint = roleHint;
@@ -142,6 +146,12 @@ public final class FragmentBtBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.openBtSettingsBtn;
+      MaterialButton openBtSettingsBtn = ViewBindings.findChildViewById(rootView, id);
+      if (openBtSettingsBtn == null) {
+        break missingId;
+      }
+
       id = R.id.refreshBtn;
       MaterialButton refreshBtn = ViewBindings.findChildViewById(rootView, id);
       if (refreshBtn == null) {
@@ -161,7 +171,7 @@ public final class FragmentBtBinding implements ViewBinding {
       }
 
       return new FragmentBtBinding((ScrollView) rootView, actionBtn, btStatus, btVu, chipClient,
-          chipServer, deviceList, devicesCard, refreshBtn, roleChips, roleHint);
+          chipServer, deviceList, devicesCard, openBtSettingsBtn, refreshBtn, roleChips, roleHint);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

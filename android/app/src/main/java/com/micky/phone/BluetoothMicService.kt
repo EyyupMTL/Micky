@@ -86,9 +86,16 @@ class BluetoothMicService : Service() {
         running = true
         thread = thread(name = "micky-bt-srv", isDaemon = true) {
             try {
-                val ss = adapter.listenUsingRfcommWithServiceRecord("MickyMic", MICKY_BT_UUID)
+                // Insecure variant accepts connections without requiring a
+                // bonded link key on every Android version — more reliable
+                // for first-time hookups.
+                val ss = try {
+                    adapter.listenUsingInsecureRfcommWithServiceRecord("MickyMic", MICKY_BT_UUID)
+                } catch (_: Throwable) {
+                    adapter.listenUsingRfcommWithServiceRecord("MickyMic", MICKY_BT_UUID)
+                }
                 serverSocket = ss
-                BtState.status.postValue("Eşleşme bekleniyor…")
+                BtState.status.postValue("Eşleşme bekleniyor… karşı telefonda 'Mikrofon Al' seç ve bu cihazı tıkla")
                 val s = ss.accept()  // blocks
                 ss.close(); serverSocket = null
                 socket = s
@@ -96,7 +103,7 @@ class BluetoothMicService : Service() {
                 BtState.connected.postValue(true)
                 streamMicTo(s.outputStream)
             } catch (e: Exception) {
-                BtState.status.postValue("Hata: ${e.message}")
+                BtState.status.postValue("Sunucu hata: ${e.message}")
             } finally {
                 running = false
                 BtState.connected.postValue(false)
@@ -191,15 +198,35 @@ class BluetoothMicService : Service() {
         thread = thread(name = "micky-bt-cli", isDaemon = true) {
             try {
                 BtState.status.postValue("Bağlanılıyor: ${device.name ?: address}")
-                val s = device.createRfcommSocketToServiceRecord(MICKY_BT_UUID)
                 adapter?.cancelDiscovery()
-                s.connect()  // blocks
+                // Try secure first, then insecure as fallback. Insecure works
+                // even when devices weren't paired with a confirmed PIN.
+                val s = try {
+                    val sec = device.createRfcommSocketToServiceRecord(MICKY_BT_UUID)
+                    sec.connect()
+                    sec
+                } catch (e: Exception) {
+                    try { } catch (_: Throwable) {}
+                    val insec = device.createInsecureRfcommSocketToServiceRecord(MICKY_BT_UUID)
+                    insec.connect()
+                    insec
+                }
                 socket = s
                 BtState.connected.postValue(true)
                 BtState.status.postValue("Bağlı: ${device.name ?: address}")
                 playFrom(s.inputStream)
             } catch (e: Exception) {
-                BtState.status.postValue("Hata: ${e.message}")
+                val msg = e.message ?: ""
+                val hint = when {
+                    msg.contains("read failed") || msg.contains("socket closed") ->
+                        "Karşı telefonda Micky açık ve 'Mikrofon Ver' başlatılmış olmalı."
+                    msg.contains("Connection refused") ->
+                        "Karşı telefonda 'Mikrofon Ver' modu çalışmıyor."
+                    msg.contains("not paired") || msg.contains("authentication") ->
+                        "Telefonlar Android Ayarlar > Bluetooth'tan eşleştirilmemiş."
+                    else -> ""
+                }
+                BtState.status.postValue("Bağlanamadı: $msg${if (hint.isNotEmpty()) " — $hint" else ""}")
             } finally {
                 running = false
                 BtState.connected.postValue(false)

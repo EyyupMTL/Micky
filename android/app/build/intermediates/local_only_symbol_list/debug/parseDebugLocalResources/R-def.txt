@@ -32,6 +32,10 @@ id cancelBtn
 id chipBt
 id chipClient
 id chipDirect
+id chipMicAuto
+id chipMicBottom
+id chipMicDefault
+id chipMicTop
 id chipServer
 id chipUsb
 id chipWifi
@@ -42,6 +46,8 @@ id fxChips
 id gainSlider
 id gainValue
 id hostInput
+id micChips
+id micHint
 id micOrb
 id mismatchBanner
 id modeChips
@@ -49,6 +55,7 @@ id navHost
 id nav_bluetooth
 id nav_home
 id nav_settings
+id openBtSettingsBtn
 id orbHint
 id portInput
 id promptText

@@ -3257,6 +3257,10 @@ id checked
 id chipBt
 id chipClient
 id chipDirect
+id chipMicAuto
+id chipMicBottom
+id chipMicDefault
+id chipMicTop
 id chipServer
 id chipUsb
 id chipWifi
@@ -3422,6 +3426,8 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id message
+id micChips
+id micHint
 id micOrb
 id middle
 id mini
@@ -3483,6 +3489,7 @@ id notification_main_column_container
 id off
 id on
 id onInterceptTouchReturnSwipe
+id openBtSettingsBtn
 id open_search_bar_text_view
 id open_search_view_background
 id open_search_view_clear_button

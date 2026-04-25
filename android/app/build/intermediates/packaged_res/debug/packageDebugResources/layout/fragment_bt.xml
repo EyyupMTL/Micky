@@ -85,6 +85,19 @@
                     android:layout_marginTop="10dp"
                     android:textColor="@color/text_dim"
                     android:textSize="12sp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/openBtSettingsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Bluetooth ayarlarını aç (eşleştirmek için)"
+                    android:textAllCaps="false"
+                    android:textColor="@color/accent"
+                    app:icon="@drawable/ic_bluetooth"
+                    app:iconTint="@color/accent"
+                    app:strokeColor="@color/accent"
+                    style="@style/Widget.Material3.Button.OutlinedButton"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

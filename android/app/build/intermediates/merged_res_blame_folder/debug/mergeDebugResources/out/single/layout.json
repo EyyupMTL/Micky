@@ -1,11 +1,11 @@
 [
     {
-        "merged": "com.micky.phone.app-mergeDebugResources-38:/layout/activity_qr_scan.xml",
-        "source": "com.micky.phone.app-main-41:/layout/activity_qr_scan.xml"
-    },
-    {
         "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-mergeDebugResources-38:\\layout\\fragment_bt.xml",
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\layout\\fragment_bt.xml"
+    },
+    {
+        "merged": "com.micky.phone.app-mergeDebugResources-38:/layout/fragment_settings.xml",
+        "source": "com.micky.phone.app-main-41:/layout/fragment_settings.xml"
     },
     {
         "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-mergeDebugResources-38:\\layout\\fragment_settings.xml",

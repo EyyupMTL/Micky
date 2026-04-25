@@ -5,11 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.textfield.TextInputEditText;
 import com.micky.phone.R;
 import java.lang.NullPointerException;
@@ -21,7 +24,25 @@ public final class FragmentSettingsBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final Chip chipMicAuto;
+
+  @NonNull
+  public final Chip chipMicBottom;
+
+  @NonNull
+  public final Chip chipMicDefault;
+
+  @NonNull
+  public final Chip chipMicTop;
+
+  @NonNull
   public final TextInputEditText hostInput;
+
+  @NonNull
+  public final ChipGroup micChips;
+
+  @NonNull
+  public final TextView micHint;
 
   @NonNull
   public final TextInputEditText portInput;
@@ -29,11 +50,18 @@ public final class FragmentSettingsBinding implements ViewBinding {
   @NonNull
   public final MaterialButton scanBtn;
 
-  private FragmentSettingsBinding(@NonNull ScrollView rootView,
-      @NonNull TextInputEditText hostInput, @NonNull TextInputEditText portInput,
-      @NonNull MaterialButton scanBtn) {
+  private FragmentSettingsBinding(@NonNull ScrollView rootView, @NonNull Chip chipMicAuto,
+      @NonNull Chip chipMicBottom, @NonNull Chip chipMicDefault, @NonNull Chip chipMicTop,
+      @NonNull TextInputEditText hostInput, @NonNull ChipGroup micChips, @NonNull TextView micHint,
+      @NonNull TextInputEditText portInput, @NonNull MaterialButton scanBtn) {
     this.rootView = rootView;
+    this.chipMicAuto = chipMicAuto;
+    this.chipMicBottom = chipMicBottom;
+    this.chipMicDefault = chipMicDefault;
+    this.chipMicTop = chipMicTop;
     this.hostInput = hostInput;
+    this.micChips = micChips;
+    this.micHint = micHint;
     this.portInput = portInput;
     this.scanBtn = scanBtn;
   }
@@ -65,9 +93,45 @@ public final class FragmentSettingsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.chipMicAuto;
+      Chip chipMicAuto = ViewBindings.findChildViewById(rootView, id);
+      if (chipMicAuto == null) {
+        break missingId;
+      }
+
+      id = R.id.chipMicBottom;
+      Chip chipMicBottom = ViewBindings.findChildViewById(rootView, id);
+      if (chipMicBottom == null) {
+        break missingId;
+      }
+
+      id = R.id.chipMicDefault;
+      Chip chipMicDefault = ViewBindings.findChildViewById(rootView, id);
+      if (chipMicDefault == null) {
+        break missingId;
+      }
+
+      id = R.id.chipMicTop;
+      Chip chipMicTop = ViewBindings.findChildViewById(rootView, id);
+      if (chipMicTop == null) {
+        break missingId;
+      }
+
       id = R.id.hostInput;
       TextInputEditText hostInput = ViewBindings.findChildViewById(rootView, id);
       if (hostInput == null) {
+        break missingId;
+      }
+
+      id = R.id.micChips;
+      ChipGroup micChips = ViewBindings.findChildViewById(rootView, id);
+      if (micChips == null) {
+        break missingId;
+      }
+
+      id = R.id.micHint;
+      TextView micHint = ViewBindings.findChildViewById(rootView, id);
+      if (micHint == null) {
         break missingId;
       }
 
@@ -83,7 +147,8 @@ public final class FragmentSettingsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSettingsBinding((ScrollView) rootView, hostInput, portInput, scanBtn);
+      return new FragmentSettingsBinding((ScrollView) rootView, chipMicAuto, chipMicBottom,
+          chipMicDefault, chipMicTop, hostInput, micChips, micHint, portInput, scanBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

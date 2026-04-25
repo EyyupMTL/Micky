@@ -20,8 +20,8 @@
         "source": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-main-41:\\drawable\\banner_warn.xml"
     },
     {
-        "merged": "com.micky.phone.app-debug-39:/layout_activity_qr_scan.xml.flat",
-        "source": "com.micky.phone.app-main-41:/layout/activity_qr_scan.xml"
+        "merged": "com.micky.phone.app-debug-39:/layout_fragment_settings.xml.flat",
+        "source": "com.micky.phone.app-main-41:/layout/fragment_settings.xml"
     },
     {
         "merged": "C:\\Users\\eyypm\\.gradle\\daemon\\8.10.2\\com.micky.phone.app-debug-39:\\mipmap-hdpi_ic_launcher.xml.flat",
